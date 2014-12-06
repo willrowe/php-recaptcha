@@ -28,7 +28,7 @@ class HtmlBuilder
                 continue;
             }
             $name = is_string($name) ? $name : $value;
-            formattedAttributes[$name] = $name . '="' . self::escape($value) . '"';
+            $formattedAttributes[$name] = $name . '="' . self::escape($value) . '"';
         }
 
         return $formattedAttributes ? ' ' . implode(' ', $formattedAttributes) : '';
