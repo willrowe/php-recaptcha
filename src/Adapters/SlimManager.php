@@ -8,12 +8,13 @@ final class SlimManager
 {
     /**
      * Register a Recaptcha instance with the application container.
+     * 
      * @param  boolean                    $registerViewExtension Whether or not to also register a parser extension (if available).
-     * @param  string                     $appName               The name of the application to register with.
      * @param  \Wowe\Recaptcha\Recaptcha  $recaptcha             The Recaptcha instance to bind to.
+     * @param  string                     $appName               The name of the application to register with.
      * @return void
      */
-    public static function register($registerViewExtension = false, $appName = null, Recaptcha $recaptcha = null)
+    public static function register($registerViewExtension = false, Recaptcha $recaptcha = null, $appName = null)
     {
         $app = call_user_func_array(['\Slim\Slim', 'getInstance'], array_filter([$appName]));
 
@@ -26,6 +27,7 @@ final class SlimManager
 
     /**
      * Register the singleton with the application container.
+     * 
      * @param  \Slim\Slim                $app       The application instance to register with.
      * @param  \Wowe\Recaptcha\Recaptcha $recaptcha The Recaptcha instance to bind to.
      * @return \Wowe\Recaptcha\Recaptcha
@@ -46,6 +48,7 @@ final class SlimManager
 
     /**
      * Register the available parser extension.
+     * 
      * @param  \Slim\Slim                $app       The application instance to register with.
      * @param  \Wowe\Recaptcha\Recaptcha $recaptcha The Recaptcha instance to inject into the extension.
      * @return void

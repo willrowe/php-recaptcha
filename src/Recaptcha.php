@@ -73,7 +73,7 @@ class Recaptcha
     /**
      * Generates a script tag based on the options.
      * 
-     * @param  string $onload     The name of the JavaScirpt function to be called on load.
+     * @param  string $onload     The name of the JavaScript function to be called on load.
      * @param  string $render     When to render the widget ('explicit' or 'onload').
      * @param  string $hl         The language to be used for the widget.
      * @param  array  $attributes Additional attributes for the tag.
@@ -109,7 +109,7 @@ class Recaptcha
      * Queries the Google API to determine if the CAPTCHA is valid.
      * 
      * @param  string $response The user response token.
-     * @param  string $remoteIp The user's IP address
+     * @param  string $remoteIp The user's IP address.
      * @return boolean
      */
     public function verify($response, $remoteIp = null)
@@ -144,7 +144,7 @@ class Recaptcha
     }
 
     /**
-     * The list of errors returned from the last verification query.
+     * The list of errors from the last verification query.
      * 
      * @return array
      */
