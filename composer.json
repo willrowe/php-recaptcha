@@ -1,6 +1,6 @@
 {
     "name": "wowe/recaptcha",
-    "description": "Implementation of the Google reCAPTCHA API.",
+    "description": "Implementation of the Google reCAPTCHA API for PHP.",
     "keywords": ["recaptcha", "google"],
     "homepage": "https://github.com/willrowe/php-recaptcha",
     "license": "MIT",
