@@ -62,7 +62,7 @@ $recaptcha = new Recaptcha('secret', 'siteKey');
     + Returns `array`
 
 ###Verification Error Codes###
-If `verify` returns false, calling `errors` will return a list of the errors encountered. These will most often consist of [error codes returned by the Google API](https://developers.google.com/recaptcha/docs/verify). In addition to these it may also return:
+After calling `verify` you may call `errors` to get a list of any errors that may have been encountered. If any empty array is returned then there were no errors! If there are errors, they will most often be [error codes returned by the Google API](https://developers.google.com/recaptcha/docs/verify). In addition to those it may also return:
 - `transfer-error`: An exception was encountered when attempting to connect to the API.
 - `api-error`: A HTTP status code other than 200 was returned by the API.
 - `response-error`: The format of the response returned by the API could not be read.
@@ -101,7 +101,7 @@ echo $twig->render('index.html');
 ###Slim Framework###
 **[Website](http://www.slimframework.com/) | [GitHub](https://github.com/codeguy/Slim)**  
 The `Recaptcha` class can be registered as a singleton in the Slim container automatically by running the `SlimManager::register` method, which has three optional arguments:
-- `register($registerViewExtension = false, $recaptcha = null, $appName = null)`
+- `register($registerViewExtension = false, $recaptcha = null, $appName = null)`  
     Register a Recaptcha instance with the application container.
     + $registerViewExtension `boolean`: Whether or not to also register a view extension (if available).
     + $recaptcha `\Wowe\Recaptcha\Recaptcha`: The Recaptcha instance to bind to.
