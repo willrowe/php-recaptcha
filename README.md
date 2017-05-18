@@ -11,6 +11,7 @@
     + [Twig](#twig)
     + [Slim Framework](#slim-framework)
 - [Release Notes](#release-notes)
+- [Version Compatibility](#version-compatibility)
 - [License](#license)
 
 ## Installation
@@ -138,6 +139,11 @@ If a value of `true` is passed as the `registerViewExtension` and a view engine 
 ## Release Notes
 *Additional information can be found in the CHANGELOG.md file*
 - v1.0.0 - Initial release
+
+## Version Compatibility
+Recaptcha for PHP | [Twig](#twig) | [Slim Framework](#slim-framework)
+------------------|---------------|----------------------------------
+v1.x              | v1.x          | v2.x
 
 License
 -------
