@@ -1,5 +1,4 @@
-Recaptcha for PHP
-=========================
+# Recaptcha for PHP
 **Recaptcha for PHP** provides a full-featured PHP implementation of the [Google reCAPTCHA API](https://developers.google.com/recaptcha/) along with some helpful adapters for other popular packages. It specifically uses the "no CAPTCHA" version released in December 2014.
 
 - [Installation](#installation)
@@ -14,22 +13,20 @@ Recaptcha for PHP
 - [Release Notes](#release-notes)
 - [License](#license)
 
-Installation
-------------
+## Installation
 **Via Composer**:  
 `composer require wowe/recaptcha:1.*`
 
-Configuration
--------------
+## Configuration
 Only two values are required to use the package:
 - `secret` The part of the API key pair used for authentication.
 - `siteKey` The part of the API key pair which uniquely identifies your site.
 
 Both of these values must be acquired from Google. Directions on how to do so may be found [here](https://developers.google.com/recaptcha/docs/start).
 
-Usage
------
-###Setup###
+## Usage
+
+### Setup
 In order to use the package, create a new instance of the `Recaptcha` class, passing in the `secret` and `siteKey` values.
 ```php
 require 'vendor/autoload.php';
@@ -37,7 +34,8 @@ use \Wowe\Recaptcha\Recaptcha;
 
 $recaptcha = new Recaptcha('secret', 'siteKey');
 ```
-###Available Methods###
+
+### Available Methods
 - `script($onload = null, $render = null, $hl = null, $attributes = array())`  
     Generates a script tag based on the options.  
     + $onload `string`: The name of the JavaScript function to be called on load.
@@ -61,15 +59,15 @@ $recaptcha = new Recaptcha('secret', 'siteKey');
     The list of errors from the last verification query.
     + Returns `array`
 
-###Verification Error Codes###
+### Verification Error Codes
 After calling `verify` you may call `errors` to get a list of any errors that may have been encountered. If any empty array is returned then there were no errors! If there are errors, they will most often be [error codes returned by the Google API](https://developers.google.com/recaptcha/docs/verify). In addition to those it may also return:
 - `transfer-error`: An exception was encountered when attempting to connect to the API.
 - `api-error`: A HTTP status code other than 200 was returned by the API.
 - `response-error`: The format of the response returned by the API could not be read.
 
-Adapters
---------
-###Twig###
+## Adapters
+
+### Twig
 **[Website](http://twig.sensiolabs.org/) | [GitHub](https://github.com/twigphp/Twig)**  
 The `script` and `widget` methods can be exposed in Twig templates by adding an instance of the included `TwigExtension` class to the Twig environment. The `TwigExtension` instance must be initialized with an instance of the `Recaptcha` class. `script` is mapped to a function called `recaptchaScript` and `widget` is mapped to a function called `recaptchaWidget`. All arguments are the same as the definitions [above](#available-methods).
 ```php
@@ -98,7 +96,8 @@ echo $twig->render('index.html');
     </body>
 </html>
 ```
-###Slim Framework###
+
+### Slim Framework
 **[Website](http://www.slimframework.com/) | [GitHub](https://github.com/codeguy/Slim)**  
 The `Recaptcha` class can be registered as a singleton in the Slim container automatically by running the `SlimManager::register` method, which has three optional arguments:
 - `register($registerViewExtension = false, $recaptcha = null, $appName = null)`  
@@ -136,8 +135,7 @@ $app->run();
 ```
 If a value of `true` is passed as the `registerViewExtension` and a view engine is being used which has an extension available (eg. Twig), it will register the corresponding extension with the view engine.
 
-Release Notes
--------------
+## Release Notes
 *Additional information can be found in the CHANGELOG.md file*
 - v1.0.0 - Initial release
 
